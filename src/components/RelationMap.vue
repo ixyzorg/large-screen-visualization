@@ -58,8 +58,8 @@ const renderEcharts = () => {
           show: true,
           color: '#fff',
           formatter: function (params) {
-            //@ts-ignore
-            return params.data!.speed
+            const data = params.data as { speed?: string }
+            return data.speed || ''
           }
         },
         // 圆饼下文字
@@ -81,7 +81,6 @@ const renderEcharts = () => {
               category: 0,
               active: true,
               speed: `${item.speed}kb/s`,
-              // 位置
               value: item.value
             }
           } else {
@@ -145,10 +144,30 @@ const renderEcharts = () => {
         },
         // 线的数据级，前后线需要重合。数据固定
         data: [
-          [{ coord: [0, 300] }, { coord: [50, 200] }],
-          [{ coord: [0, 100] }, { coord: [50, 200] }],
-          [{ coord: [50, 200] }, { coord: [100, 100] }],
-          [{ coord: [50, 200] }, { coord: [100, 300] }]
+          {
+            coords: [
+              [0, 300],
+              [50, 200]
+            ]
+          },
+          {
+            coords: [
+              [0, 100],
+              [50, 200]
+            ]
+          },
+          {
+            coords: [
+              [50, 200],
+              [100, 100]
+            ]
+          },
+          {
+            coords: [
+              [50, 200],
+              [100, 300]
+            ]
+          }
         ]
       }
     ]

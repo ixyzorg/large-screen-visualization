@@ -71,7 +71,6 @@ const renderEcharts = () => {
         bottom: '10%',
         width: '20%'
       },
-
       // 中国地图
       geo: {
         // 展示
@@ -79,9 +78,9 @@ const renderEcharts = () => {
         // 中国地图
         map: 'china',
         // 开启缩放
-        roam: true,
+        roam: false,
         // 初始缩放
-        zoom: 0.8,
+        zoom: 0.9,
         // 中心点
         center: [113.83531246, 34.0267395887],
         // 默认状态的省份样式
