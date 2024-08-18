@@ -15,7 +15,9 @@
   "dependencies": {
     "@vueuse/core": "^11.0.0",
     "axios": "^1.7.4",
+    "countup.js": "^2.8.0",
     "echarts": "^5.5.1",
+    "echarts-wordcloud": "^2.1.0",
     "vue": "^3.4.29"
   },
   "devDependencies": {

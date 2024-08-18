@@ -11,7 +11,6 @@ import { onMounted, ref, watch } from 'vue'
 const props = defineProps<{
   data: IRiskData
 }>()
-console.log(props.data)
 const chartRef = ref<HTMLDivElement>()
 let myChart: echarts.ECharts | undefined
 const renderEcharts = () => {

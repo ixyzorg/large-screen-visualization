@@ -1,11 +1,11 @@
-interface IAbnormalData {
+export interface IAbnormalData {
   abnormals: {
     id: number
     name: string
     value: number
   }[]
 }
-interface IMapData {
+export interface IMapData {
   categoryData: { [prop: string]: { name: string; value: number }[] }
   colors: string[]
   topData: { [prop: string]: { name: string; value: number }[] }
@@ -19,7 +19,7 @@ export interface IRegionData {
     value: number
   }[]
 }
-interface IRlationData {
+export interface IRlationData {
   relations: {
     id: number
     name: string
@@ -46,10 +46,10 @@ export interface IServerData {
   }[]
 }
 
-interface ITotalData {
+export interface ITotalData {
   [prop: string]: string
 }
-interface IWordCloundData {
+export interface IWordCloundData {
   datas: {
     name: string
     value: number

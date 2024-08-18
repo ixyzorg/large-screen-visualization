@@ -2,9 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'LedFont';
+  src: url('./assets/fonts/FX-LED.ttf');
+}
 html,
 body,
 #app {
   height: 100%;
   overflow: hidden;
+}
+
+/* 北京渐变加字体镂空 */
+.text-gradient {
+  background-image: linear-gradient(to bottom, #e5e4ea, #5ea8f2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

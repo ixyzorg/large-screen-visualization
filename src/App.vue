@@ -1,30 +1,34 @@
 <template>
   <div class="h-screen bg-[url('./assets/imgs/bg.jpg')] bg-cover bg-center text-white">
     <div class="flex p-6" ref="screenRef">
-      <div v-if="data" class="flex flex-[3] flex-col bg-slate-800 bg-opacity-50">
+      <div v-if="data" class="flex flex-[3] flex-col">
         <!-- 横向柱状图 -->
-        <HorizontalBar class="mb-4 flex-1" :data="data.regionData" />
+        <HorizontalBar class="mb-4 flex-1 bg-slate-800 bg-opacity-50" :data="data.regionData" />
         <!-- 雷达图 -->
-        <RadarMap class="mb-4 flex-1" :data="data.riskData" />
+        <RadarMap class="mb-4 flex-1 bg-slate-800 bg-opacity-50" :data="data.riskData" />
         <!-- 关系图 -->
-        <RelationMap class="flex-1" />
+        <RelationMap class="flex-1 bg-slate-800 bg-opacity-50" :data="data.relationData" />
       </div>
 
-      <div class="mx-6 flex flex-[4] flex-col">
-        <div class="mb-6 bg-slate-800 bg-opacity-50 text-[2rem]">大屏可视化</div>
+      <div v-if="data" class="mx-6 flex flex-[4] flex-col">
+        <div
+          class="mb-6 bg-[url('./assets/imgs/title_bg.png')] bg-[length:100%_100%] bg-no-repeat text-center text-[2rem]"
+        >
+          大屏可视化
+        </div>
         <!-- 数据总览 -->
-        <DataTotal class="mb-6 flex-1 bg-slate-800 bg-opacity-50" />
+        <DataTotal class="mb-6 bg-slate-800 bg-opacity-50" :data="data.totalData" />
         <!-- 地图 -->
-        <MapChart class="flex-[2] bg-slate-800 bg-opacity-50" />
+        <MapChart class="flex-1 bg-slate-800 bg-opacity-50" :data="data.mapData" />
       </div>
 
-      <div v-if="data" class="flex flex-[3] flex-col bg-slate-800 bg-opacity-50">
+      <div v-if="data" class="flex flex-[3] flex-col">
         <!-- 纵向柱状图 -->
-        <VerticalBar class="mb-4 flex-1" :data="data.serverData" />
+        <VerticalBar class="mb-4 flex-1 bg-slate-800 bg-opacity-50" :data="data.serverData" />
         <!-- 环形图 -->
-        <RingBar class="mb-4 flex-1" />
+        <RingBar class="mb-4 flex-1 bg-slate-800 bg-opacity-50" :data="data.abnormalData" />
         <!-- 文档云图 -->
-        <WorldCloud class="flex-1" />
+        <WorldCloud class="flex-1 bg-slate-800 bg-opacity-50" :data="data.wordCloudData" />
       </div>
     </div>
   </div>
